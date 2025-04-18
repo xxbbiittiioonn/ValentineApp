@@ -1,0 +1,106 @@
+/* Основные стили */
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #ffe6f2;
+  color: #ff4d88;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Заголовок с контактной информацией */
+.contact-header {
+  background-color: #ff4d88;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.contact-header a {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-header a:hover {
+  text-decoration: none;
+}
+
+/* Контейнер для основного содержимого */
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #ff4d88;
+  text-shadow: 2px 2px 5px #ff99bb;
+}
+
+p {
+  font-size: 18px;
+  color: #cc3366;
+}
+
+button {
+  background-color: #ff99bb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(255, 77, 136, 0.5);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff4d88;
+  transform: scale(1.1);
+}
+
+#message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4d88;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#message.visible {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Падающие сердечки */
+@keyframes falling-hearts {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4d88;
+  clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);
+  animation: falling-hearts 4s linear infinite;
+}
